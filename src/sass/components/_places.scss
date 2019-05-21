@@ -1,0 +1,142 @@
+.places-section {
+    margin-top: 4rem;
+    overflow: hidden;
+
+    .place-card {
+        display: inline-block;
+        width: calc(32% - 4px);
+        margin: 1rem;
+        box-shadow: inset 0 0 10px -2px $color__light-gray;
+        border-radius: 10px;
+        text-align: center;
+
+        img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .place-information {
+            background: $color__dark-pink;
+            padding: .5rem 0;
+            position: relative;
+            top: -3rem;
+
+            h5,
+            h6 {
+                margin: 0;
+                font-weight: normal;
+                color: white;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .place-eta {
+            position: relative;
+            top: -1.5rem;
+
+            & > h6 {
+                margin: 0 0 1rem 0;
+                font-weight: normal;
+            }
+
+            .time {
+
+                span {
+                    display: inline-block;
+                    width: 40px;
+                    text-align: center;
+                    margin-right: 1rem;
+                    vertical-align: middle;
+                }
+
+                h6 {
+                    display: inline-block;
+                    font-weight: normal;
+                    margin: 0;
+                    vertical-align: middle;
+                }
+            }
+
+            .icon-person {
+                font-size: 1.5rem;
+            }
+        }
+
+        @include responsive($max-width: '350px') {
+
+            .place-information,
+            .place-eta {
+
+                h5 {
+                    font-size: .7rem;
+                }
+
+                h6 {
+                    font-size: .6rem;
+                }
+            }
+
+            .place-eta {
+
+                span {
+                    font-size: .7rem;
+                }
+                .icon-person {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .carousel-wrapper {
+        width: 100%;
+
+        .slider__bullets {
+            display: none !important;
+        }
+
+        @include responsive($max-width: '880px') {
+
+            .office-image {
+                margin: 0;
+            }
+            .slider__bullets {
+                display: block !important;
+            }
+        }
+    }
+
+    @include responsive($max-width: '860px') {
+
+        .place-card {
+            margin: 0;
+        }
+    }
+
+    @include responsive($max-width: '480px') {
+        padding: 2rem 1rem 4rem 1rem;
+
+        .place-card {
+            margin: 0;
+        }
+
+        .place-information {
+
+            h6 {
+                @include font-size(12)
+            }
+
+            h5 {
+                @include font-size(14)
+            }
+        }
+    }
+}

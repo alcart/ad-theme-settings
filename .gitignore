@@ -1,0 +1,8 @@
+*.log
+.babelrc
+webpack.config.js
+node_modules/
+images/*
+ubuntu-xenial-16.04-cloudimg-console.log
+.DS_Store
+package-lock.json

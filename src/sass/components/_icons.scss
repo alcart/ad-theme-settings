@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'glyphs';
+    src:  url('/wp-content/themes/chuchys/fonts/glyphs.eot?w1wlav');
+    src:  url('/wp-content/themes/chuchys/fonts/glyphs.eot?w1wlav#iefix') format('embedded-opentype'),
+    url('/wp-content/themes/chuchys/fonts/glyphs.ttf?w1wlav') format('truetype'),
+    url('/wp-content/themes/chuchys/fonts/glyphs.woff?w1wlav') format('woff'),
+    url('/wp-content/themes/chuchys/fonts/glyphs.svg?w1wlav#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'glyphs' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone-iphone:before {
+    content: "\e90b";
+    color: inherit;
+}
+.icon-mail:before {
+    content: "\e90c";
+    color: inherit;
+}
+.icon-sms:before {
+    content: "\e90d";
+    color: inherit;
+}
+.icon-person:before {
+    content: "\e909";
+    color: inherit;
+}
+.icon-car:before {
+    content: "\e90a";
+    color: inherit;
+}
+.icon-plus:before {
+    content: "\e907";
+    color: inherit;
+}
+.icon-cross:before {
+    content: "\e908";
+    color: inherit;
+}
+.icon-world:before {
+    content: "\e900";
+    color: inherit;
+}
+.icon-facebook:before {
+    content: "\e901";
+    color: inherit;
+}
+.icon-twitter:before {
+    content: "\e902";
+    color: inherit;
+}
+.icon-place:before {
+    content: "\e903";
+    color: inherit;
+}
+.icon-message:before {
+    content: "\e904";
+    color: inherit;
+}
+.icon-phone:before {
+    content: "\e905";
+    color: inherit;
+}
+.icon-check:before {
+    content: "\e906";
+    color: inherit;
+}
+.icon-instagram:before {
+    content: "\ea92";
+}
+.icon-telegram:before {
+    content: "\ea95";
+}
+.icon-arrow-right:before {
+    content: "\ea34";
+}
+.icon-arrow-left:before {
+    content: "\ea38";
+}

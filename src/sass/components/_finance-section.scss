@@ -1,0 +1,93 @@
+.finance-section {
+    text-align: center;
+    margin-top: 6rem;
+
+    .option {
+        display: inline-block;
+        width: calc(33.3% - 4px);
+        padding: 0 2rem;
+        border-bottom: 1px solid $color__light-gray;
+        vertical-align: top;
+        margin-right: -4px;
+        position: relative;
+        height: 500px;
+
+        .option-image {
+            max-width: 210px;
+            height: 52px;
+            text-align: left;
+
+            img {
+                max-height: 52px;
+            }
+        }
+
+        .option-information {
+            height: auto;
+            text-align: left;
+
+            h4 {
+                font-weight: normal;
+                @include font-size(20);
+                margin: 1rem 0;
+            }
+
+            p {
+                margin: 0;
+                font-size: .9rem;
+            }
+
+            br {
+                display: none;
+            }
+
+            .action {
+                display: block;
+                position: absolute;
+                bottom: 2.5rem;
+            }
+
+            .call-to-action {
+                font-size: 1rem;
+                display: block;
+                padding: .3rem 1.5rem;
+                color: white;
+                text-decoration: none;
+                max-width: 150px;
+                text-align: center;
+            }
+        }
+
+        @include responsive($max-width: '880px') {
+
+            .option-information {
+
+                .call-to-action {
+                    bottom: -4rem;
+                }
+            }
+        }
+
+        @include responsive($max-width: '786px') {
+            width: 100%;
+            max-width: 430px;
+            padding-top: 2rem;
+
+            .option-information {
+                height: auto;
+                padding-bottom: 2rem;
+
+                .action {
+                    position: relative;
+                    bottom: auto;
+                    margin-top: 2rem;
+                }
+            }
+
+            &:nth-last-of-type(2) {
+                border-bottom: 1px solid $color__light-gray;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,181 @@
+.wpcf7 {
+    text-align: center;
+    margin-top: 6rem !important;
+
+    h3,
+    h5 {
+        margin: 0;
+        font-weight: normal;
+    }
+
+    h5 {
+        color: $color__light-gray;
+    }
+
+    .wpcf7-form-control-wrap {
+
+        input,
+        textarea {
+            padding: .5rem 1rem;
+            margin: .5rem 0;
+            width: 60%;
+            border: 1px solid $color__light-gray;
+            border-radius: 30px;
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        textarea {
+            height: 200px;
+        }
+    }
+
+    .wpcf7-not-valid-tip {
+        text-align: left;
+        color: $color__dark-red;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .wpcf7-validation-errors {
+        border: none;
+        color: $color__dark-red
+    }
+
+    .wpcf7-mail-sent-ng {
+        border: none;
+        color: $color__dark-red
+    }
+
+    .wpcf7-response-output {
+        margin-top: .5rem;
+        border: none;
+    }
+    
+    br {
+        display: none;
+    }
+    
+    input[type="submit"] {
+        padding: .9rem 4rem;
+        @include font-size(16)
+    }
+
+    @include responsive($max-width: '650px') {
+
+        .wpcf7-form-control-wrap {
+            input,
+            textarea {
+                width: 85%;
+            }
+
+            textarea {
+                height: 150px;
+            }
+        }
+    }
+}
+
+.widget-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    width: 40%;
+    transition: 500ms transform;
+    z-index: 51;
+    background: white;
+    overflow: scroll;
+
+    .close-sidebar {
+        background: transparent;
+        padding: 0;
+        position: absolute;
+        top: 2.2rem;
+        right: 2rem;
+        border: none;
+
+        i {
+            font-size: 1.5rem;
+
+            &:before {
+                color: white;
+            }
+        }
+    }
+
+    &:after {
+        content: "";
+        background: $color__dark-pink;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 6.7rem;
+        z-index: -1;
+    }
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    .wpcf7 {
+        margin-top: 8vh !important;
+
+        h3 {
+            display: none;
+        }
+
+        h5 {
+            text-align: left;
+            color: black;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            border-color: $color__light-gray;
+            color: $color__darkest-gray;
+            margin: .25rem 0;
+        }
+
+        input[type='submit'] {
+            color: white;
+        }
+
+        textarea {
+            height: 100px;
+        }
+    }
+
+    h4 {
+        color: white;
+        width: 60%;
+        margin: 0 auto;
+        text-transform: uppercase;
+        margin-top: 5vh;
+
+        @include responsive($max-width: '400px') {
+            @include font-size(16);
+        }
+    }
+
+    @include responsive($max-width: '1110px') {
+        width: 60%;
+    }
+
+    @include responsive($max-width: '800px') {
+        &:after {
+            height: 5.1rem;
+        }
+    }
+
+    @include responsive($max-width: '700px') {
+        width: 85%;
+    }
+}

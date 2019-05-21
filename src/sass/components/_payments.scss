@@ -1,0 +1,96 @@
+.payment-section {
+    background: $color__darkest-gray;
+    position: relative;
+    padding: 4rem;
+    text-align: center;
+    width: 100vw;
+    margin: 0 -50vw;
+    left: 50%;
+    right: 50%;
+
+    h3,
+    p {
+        color: white;
+    }
+
+    & > p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .information {
+        max-width: 600px;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 1rem;
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        div:nth-child(n) {
+            display: inline-block;
+            vertical-align: top;
+            margin: 1rem 0;
+            padding: .5rem;
+        }
+
+        div:nth-child(2n) {
+            padding: 0 1rem;
+        }
+    }
+
+    @include responsive($max-width: '535px') {
+        padding: 4rem 1.5rem;
+
+        h3 {
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+        }
+
+        .information {
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 1rem;
+        }
+
+        .grid-2-12 {
+            text-align: center;
+            width: calc(25% - 4px);
+        }
+
+        .grid-10-12 {
+            text-align: center;
+            width: calc(75% - 4px);
+        }
+    }
+
+    @include responsive($max-width: '420px') {
+        text-align: center;
+
+        .grid-2-12 {
+            width: 40%;
+        }
+
+        .grid-10-12 {
+            width: 100%;
+        }
+
+        .information {
+            margin-top: 2rem;
+
+            div:nth-child(n) {
+                margin: 0;
+            }
+
+            div:nth-child(2n) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+.collapsible {
+    max-width: 600px;
+    margin: 0 auto;
+
+    .accordion-toggle {
+        font-family: 'glyphs';
+        display: inline-block;
+        float: right;
+        font-size: 1.5rem;
+
+        &:before {
+            content: "\e907";
+            display: block;
+            font-style: normal;
+            vertical-align: middle;
+            color: $color__light-gray;
+            cursor: pointer;
+        }
+    }
+
+    .toggle-collapse {
+        padding-top: 1rem;
+        position: relative;
+        border-bottom: 1px solid $color__light-gray;
+        padding-bottom: 1rem;
+
+        .accordion-toggle {
+            font-size: 1.1rem;
+        }
+
+        &.main-collapsible {
+
+            .accordion-toggle {
+                font-size: 1.5rem;
+                margin-top: .5rem;
+
+                @include responsive($max-width: '700px') {
+                    font-size: 1rem;
+                    margin-top: .15rem;
+                }
+            }
+        }
+
+        &.is-open {
+            border-bottom: none;
+
+            .accordion-toggle:before {
+                content: "\e908";
+            }
+        }
+    }
+
+    h3,
+    h4{
+        display: inline-block;
+        width: 80%;
+        vertical-align: middle;
+        font-weight: normal;
+        cursor: pointer;
+        margin: 0;
+
+
+    }
+
+    .accordion-content {
+        display: none;
+
+        p {
+            font-size: 1rem;
+            margin: 0;
+            color: $color__light-gray;
+            width: 85%;
+        }
+    }
+
+    .accordion-section {
+        position: relative;
+        border-bottom: none;
+    }
+
+    &.admin {
+        .accordion-content {
+            display: block;
+        }
+        .toggle-collapse.main-collapsible .accordion-toggle,
+        .toggle-collapse .accordion-toggle{
+            position: absolute;
+            right: 0;
+            top: 1rem;
+        }
+    }
+
+    @include responsive($max-width: '700px') {
+        max-width: 480px;
+
+        .accordion-toggle {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        h4 {
+            @include font-size(14);
+        }
+
+        .accordion-content {
+            p {
+                @include font-size(14);
+            }
+        }
+    }
+
+    @include responsive($max-width: '500px') {
+        padding: 0 2rem;
+
+        h3 {
+            @include font-size(18);
+            font-weight: bold;
+        }
+
+        h4 {
+            @include font-size(16)
+        }
+    }
+}

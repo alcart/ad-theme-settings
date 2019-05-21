@@ -1,0 +1,60 @@
+.call-to-action,
+input[type='submit'] {
+    background: $color__bluer-green;
+    color: white;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: none;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    transition: 100ms all;
+    cursor: pointer;
+    font-weight: 400;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 6px 0 darken($color__bluer-green, 10%);
+        text-shadow: 0 0 4px $color__light-gray;
+    }
+
+    &.transparent {
+        background: transparent;
+        color: white;
+        box-shadow: none;
+        border: 1px solid white;
+    }
+
+    @include responsive($max-width: '700px') {
+        @include font-size(16)
+    }
+
+    @include responsive($max-width: '480px') {
+        @include font-size(14)
+    }
+}
+
+.read-more {
+    @extend .call-to-action;
+    padding: .75rem 2rem;
+    background: transparent;
+    border: 1px solid $color__dark-gray;
+    border-radius: 6px;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    &:hover {
+        border: 1px solid $color__dark-gray;
+        box-shadow: 0 0 6px 0 $color__light-gray;
+        text-shadow: none;
+    }
+}
+
+button:focus {
+    outline: none;
+}

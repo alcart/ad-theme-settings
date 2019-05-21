@@ -1,0 +1,65 @@
+@import "variables-site/variables-site";
+
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Grid and Icons
+--------------------------------------------------------------*/
+@import "components/grid";
+@import "components/icons";
+
+@import "components/icons";
+@import "components/buttons";
+
+.settings-group-wrapper {
+    display: inline-block;
+    width: calc(50% - 4px);
+}
+
+.form-table td {
+    padding: .5rem;
+    vertical-align: top;
+
+    &.forminp-image {
+        width: auto;
+
+        img {
+            max-width: 70px;
+        }
+    }
+
+    &.remove-icon {
+        padding-left: .5rem;
+    }
+
+    input.error {
+        border-color: $color__dark-red;
+        color: $color__dark-red;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+}
+
+.settings-group-wrapper {
+    position: relative;
+}
+
+.remove-icon {
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.add-button {
+    margin-left: auto;
+    margin-right: 0;
+    line-height: 1rem !important;
+    cursor: pointer;
+
+    &:before {
+        font-size: 1rem;
+    }
+}
