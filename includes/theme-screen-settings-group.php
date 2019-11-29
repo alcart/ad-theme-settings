@@ -80,7 +80,8 @@ class ThemeScreenDynamicSettingsGroup extends ThemeScreenSettingsGroup {
         if (isset($_GET['tab'])) {
           $nav_param = "tab={$_GET['tab']}&";
         }
-        $delete_url = menu_page_url(AD_Theme_Settings::$MENU_SLUG, false) . "&" . $nav_param . http_build_query($delete_url_params);
+        global $ad_theme_settings;
+        $delete_url = menu_page_url($ad_theme_settings->menu_slug, false) . "&" . $nav_param . http_build_query($delete_url_params);
         $output .= "<td class='remove-icon'><a href='$delete_url'><span class='icon-cross'></span></a></td>";
         $output .= "</tr>";
       }
@@ -126,7 +127,7 @@ class ThemeScreenDynamicSettingsGroup extends ThemeScreenSettingsGroup {
       $output .= $new_setting->get_setting_html($this->slug);
       $opt['setting_count']++;
     }
-    $output .= "<td class='remove-icon'><a href='' data-type='empty-setting'><span class='icon-cross'></span></a></td>";
+    $output .= "<td class='remove-icon'><a href='' data-type='empty-setting'><span class='ad-settings-icon-cross'></span></a></td>";
     $output .= "</tr>";
     return $output;
   }

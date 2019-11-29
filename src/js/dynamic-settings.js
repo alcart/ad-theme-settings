@@ -8,7 +8,7 @@ let mediaSelectorOpener = require('./image-selector').addMediaOpener;
       emptyDelete: '[data-type="empty-setting"]'
     };
     
-    let addButtonTemplate = $("<td class='icon-plus add-button'></td>");
+    let addButtonTemplate = $("<td class='ad-settings-icon-plus add-button'></td>");
     let addButtons = [];
     let rowTemplate;
     let settingsGroupSlug;
@@ -42,10 +42,6 @@ let mediaSelectorOpener = require('./image-selector').addMediaOpener;
       addButtons.push({button: newAddButton, rowTemplate: rowTemplate});
       
       rows.parent().find(".setting-group:last-of-type").append(newAddButton);
-      
-      $(element).areYouSure({
-        "message": "You're changes have not been saved!"
-      })
     });
     
     addButtons.forEach((buttonObj, index) => {

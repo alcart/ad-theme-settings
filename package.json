@@ -1,6 +1,6 @@
 {
   "name": "ad-theme-settings",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Plugin for developer to dynamically create settings in wordpress",
   "script": {
     "test": "echo \"Error not test specified\" && exit 1"

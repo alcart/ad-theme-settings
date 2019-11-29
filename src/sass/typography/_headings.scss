@@ -1,0 +1,102 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font__main_serif;
+	clear: both;
+	font-weight: 400;
+}
+
+h1 {
+	@include font-size(48);
+	margin: 1rem 0;
+
+	&.entry-title {
+		font-weight: bold;
+		margin: 0 0 .5rem 0;
+		line-height: 3rem;
+	}
+
+	@include responsive($max-width: '700px') {
+		@include font-size(32);
+	}
+
+	@include responsive($max-width: '550px') {
+		@include font-size(20);
+	}
+}
+h2 {
+	@include font-size(48);
+	margin: 1rem 0;
+
+	&.entry-title {
+		font-weight: bold;
+		margin: 0 0 .5rem 0;
+		line-height: 3rem;
+	}
+
+	@include responsive($max-width: '700px') {
+		@include font-size(24);
+	}
+	@include responsive($max-width: '550px') {
+		@include font-size(20);
+	}
+}
+h3 {
+	@include font-size(34);
+	margin: .5rem 0;
+
+	&.big {
+		line-height: 120px;
+		@include font-size(120);
+
+		@include responsive($max-width: '1550px') {
+			line-height: 60px;
+			@include font-size(60);
+		}
+
+		@include responsive($max-height: '520px') {
+			@include font-size(38);
+		}
+
+		@include responsive($max-width: '786px') {
+			line-height: 38px;
+			@include font-size(38);
+		}
+
+		@include responsive($max-height: '520px') {
+			@include font-size(38);
+		}
+
+		@include responsive($max-height: '350px') {
+			line-height: 20px;
+			@include font-size(20);
+		}
+	}
+
+	@include responsive($max-width: '700px') {
+		@include font-size(24);
+	}
+	@include responsive($max-width: '550px') {
+		@include font-size(20);
+	}
+}
+h4 {
+	@include font-size(19);
+	margin: .5rem 0;
+
+	@include responsive($max-width: '420px') {
+		@include font-size(16);
+	}
+}
+h5 {
+	@include font-size(16);
+	margin: .5rem 0;
+}
+h6 {
+	@include font-size(14);
+	margin: .5rem 0;
+}
+
+h3 + h5,
+h3 + h4,
+h3 + h6 {
+	margin-top: 1rem;
+}

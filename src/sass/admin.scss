@@ -1,65 +1,21 @@
-@import "variables-site/variables-site";
+@import "common";
 
-@import "mixins/mixins-master";
+.forminp.forminp-image {
 
-/*--------------------------------------------------------------
-# Grid and Icons
---------------------------------------------------------------*/
-@import "components/grid";
-@import "components/icons";
-
-@import "components/icons";
-@import "components/buttons";
-
-.settings-group-wrapper {
-    display: inline-block;
-    width: calc(50% - 4px);
+    img {
+        max-width: 100px;
+    }
 }
 
-.form-table td {
-    padding: .5rem;
+.forminp {
     vertical-align: top;
 
-    &.forminp-image {
-        width: auto;
-
-        img {
-            max-width: 70px;
-        }
-    }
-
-    &.remove-icon {
-        padding-left: .5rem;
-    }
-
-    input.error {
-        border-color: $color__dark-red;
-        color: $color__dark-red;
+    input,
+    textarea {
+        width: 100%;
     }
 
     textarea {
-        min-height: 100px;
-    }
-}
-
-.settings-group-wrapper {
-    position: relative;
-}
-
-.remove-icon {
-
-    a {
-        text-decoration: none;
-    }
-}
-
-.add-button {
-    margin-left: auto;
-    margin-right: 0;
-    line-height: 1rem !important;
-    cursor: pointer;
-
-    &:before {
-        font-size: 1rem;
+        min-height: 90px;
     }
 }

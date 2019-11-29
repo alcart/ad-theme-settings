@@ -1,0 +1,14 @@
+.ad-blocks-loading-frame {
+    height: 300px;
+    width: 100%;
+    background: $color__light-gray;
+    position: relative;
+
+    &:before {
+        font-size: 3rem;
+        position: absolute;
+        @include absolute-middle-aligment('both');
+        animation: rotate-spinner infinite 1s;
+        color: black;
+    }
+}

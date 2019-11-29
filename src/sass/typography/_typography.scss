@@ -1,0 +1,26 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(16);
+	line-height: $font__line-height-body;
+	font-weight: 400;
+}
+
+.screen-reader-only {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	clip: rect(1px 1px 1px 1px); // IE 6 and 7
+	clip: rect(1px,1px,1px,1px);
+	clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+	overflow: hidden !important;
+}
+
+@import "headings";
+
+@import "copy";

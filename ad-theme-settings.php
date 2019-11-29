@@ -27,37 +27,41 @@ if (!class_exists('AD_Theme_Settings')) {
    * )
    */
   class AD_Theme_Settings {
-    public static $MENU_SLUG = 'ad-theme-settings';
+    public $menu_slug;
     public $tabs_count;
+    public $page_title;
+    public $menu_title;
     public $tabs;
 
-    function __construct() {
+    function __construct($page_title, $menu_title, $menu_slug= 'ad-theme-settings') {
       $this->tabs_count = 0;
       $this->tabs = array();
       //tab = array(title => string, options => array(opts))
       add_action("admin_init", array($this, "delete_options_on_init"));
-
+      $this->menu_slug = $menu_slug;
+      $this->page_title = $page_title;
+      $this->menu_title = $menu_title;
     }
 
     public function initialize() {
-      if (!isset($_GET['page']) || !($_GET['page'] == AD_Theme_Settings::$MENU_SLUG)) {
-        return;
-      }
-
       add_menu_page(
-        'A&D Options',
-        'A&D Theme',
+        $this->page_title,
+        $this->menu_title,
         'manage_options',
-        AD_Theme_Settings::$MENU_SLUG,
+        $this->menu_slug,
         array($this, 'output_screen')
       );
+      if (!isset($_GET['page']) || !($_GET['page'] == $this->menu_slug)) {
+        return;
+      }
       $this->tabs = apply_filters('ad_theme_settings_register_tab', array());
-//      var_dump($this->tabs);
-//      exit;
       $this->enqueue_theme_screen_scripts();
     }
 
     public function output_screen() {
+      if ( !(isset($_GET['page']) && $_GET['page'] == $this->menu_slug)) {
+        return;
+      }
       if (empty($this->tabs)) {
         echo "<h1>There are no registered settings</h1>";
         echo "<p>Use filter <code>ad_theme_settings_register_tab</code> to add settings</p>";
@@ -66,12 +70,13 @@ if (!class_exists('AD_Theme_Settings')) {
       $tabs = $this->tabs;
       $selected_tab = isset($_GET['tab']) ? $_GET['tab'] : $this->tabs[0]['slug'];
 
+      $menu_slug = $this->menu_slug;
       ob_start();
       ?>
       <div class="wrap">
         <nav class="nav-tab-wrapper">
           <?php foreach ($tabs as $tab): ?>
-            <a href="<?php menu_page_url(AD_Theme_Settings::$MENU_SLUG)?>&tab=<?= $tab['slug'] ?>" class="nav-tab
+            <a href="<?php menu_page_url($menu_slug)?>&tab=<?= $tab['slug'] ?>" class="nav-tab
           <?= ($selected_tab == $tab['slug']) ? 'nav-tab-active' : ''?>">
               <?= $tab['title']?>
             </a>
@@ -144,6 +149,7 @@ if (!class_exists('AD_Theme_Settings')) {
 
       foreach ($data as $slug => $setting_group) {
         $group_reference = $this->find_group_setting($slug);
+        error_log(var_export($slug, true));
         $updated_values = $group_reference->update_options($setting_group, $slug);
         $json_data["updated"] = $updated_values;
       }
@@ -168,7 +174,7 @@ if (!class_exists('AD_Theme_Settings')) {
     }
 
     public function delete_options_on_init() {
-      if (!isset($_GET['page']) || !($_GET['page'] == AD_Theme_Settings::$MENU_SLUG)) {
+      if (!isset($_GET['page']) || !($_GET['page'] == $this->menu_slug)) {
         return;
       }
       $selected_tab = isset($_GET['tab']) ? $_GET['tab'] : null;
@@ -181,7 +187,7 @@ if (!class_exists('AD_Theme_Settings')) {
         if ($selected_tab) {
           $tab_slug = "&tab=$this->find_tab_object($selected_tab)['slug']";
         }
-        wp_redirect(menu_page_url(AD_Theme_Settings::$MENU_SLUG) . "$tab_slug");
+        wp_redirect(menu_page_url($this->menu_slug) . "$tab_slug");
       }
     }
 
@@ -203,7 +209,8 @@ if (!class_exists('AD_Theme_Settings')) {
     }
 
     private function find_group_setting($group_slug) {
-      $this->tabs = apply_filters('theme_settings_register_tab', array());
+      $this->tabs = apply_filters('ad_theme_settings_register_tab', array());
+      error_log(var_export($this->tabs, true));
       foreach ($this->tabs as $tab) {
         foreach ($tab['settings'] as $group_setting) {
           if ($group_setting->slug == $group_slug){
@@ -223,7 +230,7 @@ if (!function_exists('ad_theme_settings_init')) {
 
   function ad_theme_settings_init() {
     global $ad_theme_settings;
-    $ad_theme_settings = new AD_Theme_Settings();
+    $ad_theme_settings = new AD_Theme_Settings('A&D Theme Settings', 'A&D Theme Settings');
 
     add_action('admin_init', array($ad_theme_settings, "register_ajax_action"));
     add_action( 'admin_menu', array($ad_theme_settings, 'initialize' ));

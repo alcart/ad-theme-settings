@@ -1,17 +1,17 @@
 @font-face {
-    font-family: 'glyphs';
-    src:  url('/wp-content/themes/chuchys/fonts/glyphs.eot?w1wlav');
-    src:  url('/wp-content/themes/chuchys/fonts/glyphs.eot?w1wlav#iefix') format('embedded-opentype'),
-    url('/wp-content/themes/chuchys/fonts/glyphs.ttf?w1wlav') format('truetype'),
-    url('/wp-content/themes/chuchys/fonts/glyphs.woff?w1wlav') format('woff'),
-    url('/wp-content/themes/chuchys/fonts/glyphs.svg?w1wlav#icomoon') format('svg');
+    font-family: 'ad-settings-glyphs';
+    src:  url('/wp-content/plugins/ad-theme-settings/includes/fonts/glyphs.eot?w1wlav');
+    src:  url('/wp-content/plugins/ad-theme-settings/includes/fonts/glyphs.eot?w1wlav#iefix') format('embedded-opentype'),
+    url('/wp-content/plugins/ad-theme-settings/includes/fonts/glyphs.ttf?w1wlav') format('truetype'),
+    url('/wp-content/plugins/ad-theme-settings/includes/fonts/glyphs.woff?w1wlav') format('woff'),
+    url('/wp-content/plugins/ad-theme-settings/includes/fonts/glyphs.svg?w1wlav#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="ad-settings-icon-"], [class*=" ad-settings-icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'glyphs' !important;
+    font-family: 'ad-settings-glyphs' !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -24,71 +24,75 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-phone-iphone:before {
-    content: "\e90b";
-    color: inherit;
-}
-.icon-mail:before {
-    content: "\e90c";
-    color: inherit;
-}
-.icon-sms:before {
-    content: "\e90d";
-    color: inherit;
-}
-.icon-person:before {
-    content: "\e909";
-    color: inherit;
-}
-.icon-car:before {
-    content: "\e90a";
-    color: inherit;
-}
-.icon-plus:before {
-    content: "\e907";
-    color: inherit;
-}
-.icon-cross:before {
-    content: "\e908";
-    color: inherit;
-}
-.icon-world:before {
+.ad-settings-icon-person:before {
     content: "\e900";
-    color: inherit;
 }
-.icon-facebook:before {
+.ad-settings-icon-delivery-truck:before {
     content: "\e901";
-    color: inherit;
 }
-.icon-twitter:before {
+.ad-settings-icon-papers:before {
     content: "\e902";
-    color: inherit;
 }
-.icon-place:before {
+.ad-settings-icon-home:before {
     content: "\e903";
-    color: inherit;
 }
-.icon-message:before {
+.ad-settings-icon-world:before {
     content: "\e904";
-    color: inherit;
 }
-.icon-phone:before {
+.ad-settings-icon-facebook:before {
     content: "\e905";
-    color: inherit;
 }
-.icon-check:before {
+.ad-settings-icon-twitter:before {
     content: "\e906";
-    color: inherit;
 }
-.icon-instagram:before {
-    content: "\ea92";
+.ad-settings-icon-place:before {
+    content: "\e907";
 }
-.icon-telegram:before {
-    content: "\ea95";
+.ad-settings-icon-message:before {
+    content: "\e908";
 }
-.icon-arrow-right:before {
+.ad-settings-icon-phone:before {
+    content: "\e909";
+}
+.ad-settings-icon-check:before {
+    content: "\e90a";
+}
+.ad-settings-icon-cross:before {
+    content: "\e90c";
+}
+.ad-settings-icon-person:before {
+    content: "\e90d";
+}
+.ad-settings-icon-car:before {
+    content: "\e90e";
+}
+.ad-settings-icon-phone-iphone:before {
+    content: "\e90f";
+}
+.ad-settings-icon-mail:before {
+    content: "\e910";
+}
+.ad-settings-icon-sms:before {
+    content: "\e911";
+}
+.ad-settings-icon-arrow-right:before {
     content: "\ea34";
 }
-.icon-arrow-left:before {
+.ad-settings-icon-arrow-left:before {
     content: "\ea38";
+}
+.ad-settings-icon-instagram:before {
+    content: "\ea92";
+}
+.ad-settings-icon-telegram:before {
+    content: "\ea95";
+}
+.ad-settings-icon-bin2:before {
+    content: "\e9ad";
+}
+.ad-settings-icon-plus:before {
+    content: "\ea0a";
+}
+.ad-settings-icon-minus:before {
+    content: "\ea0b";
 }
